@@ -36,7 +36,7 @@ def send_message(sender, message, subject="Website Query"):
 
 		frappe.sendmail(
 			recipients=sender,
-			content=f"<div style='white-space: pre-wrap'>Thank you for reaching out to us. We will get back to you at the earliest.\n\n\nYour query:\n\n{message}</div>",
+			content=f"<div style='white-space: pre-wrap'>This is an auto reply email.<br><br>Thank you for reaching out to us. We will get back to you at the earliest.<br><br>Your query:<br>{message}</div>",
 			subject="We've received your query!",
 		)
 
