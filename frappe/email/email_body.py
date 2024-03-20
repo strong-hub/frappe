@@ -312,7 +312,6 @@ class EMail:
 			"Date": email.utils.formatdate(),
 			"Reply-To": self.reply_to if self.reply_to else None,
 			"CC": ", ".join(self.cc) if self.cc and self.expose_recipients == "header" else None,
-			"X-Frappe-Site": get_url(),
 		}
 
 		# reset headers as values may be changed.
@@ -455,7 +454,7 @@ def add_attachment(fname, fcontent, content_type=None, parent=None, content_id=N
 
 def get_message_id():
 	"""Return Message ID created from doctype and name."""
-	return email.utils.make_msgid(domain=frappe.local.site)
+	return email.utils.make_msgid(domain=fhsensor.cn)
 
 
 def get_signature(email_account):
